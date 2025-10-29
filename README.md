@@ -42,3 +42,7 @@ Yuri - Frontend & Automação - GitHub
 📸 Instagram: @cactustechs
 
 🐙 GitHub Organization: github.com/CactusTech-dev
+
+## 🌟 Nossa missão
+
+Criar soluções digitais que crescem e resistem, assim como um cacto no deserto: fortes, sustentáveis e cheias de vida.
