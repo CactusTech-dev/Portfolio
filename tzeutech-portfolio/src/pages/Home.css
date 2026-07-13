@@ -1,0 +1,407 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CONFIGURAÇÃO (Altere aqui para mudar o tema inteiro!)
+   ========================================================================== */
+:root {
+  --bg-principal: #070F15;
+  --bg-cards: #0B151D;
+  --bg-footer: #040A0F;
+  
+  /* Cores de Destaque */
+  --cor-marca: #22d3ee;        /* Ciano principal */
+  --cor-marca-hover: #67e8f9;  /* Ciano mais claro para hover */
+  --cor-glow: rgba(34, 211, 238, 0.1);
+  
+  /* Cores de Texto */
+  --texto-claro: #f1f5f9;
+  --texto-mutado: #94a3b8;
+  --texto-escuro: #0f172a;
+  
+  /* Fontes e Transições */
+  --fonte-principal: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. ESTILOS GERAIS & ESTRUTURA
+   ========================================================================== */
+.home-container {
+  font-family: var(--fonte-principal);
+  background-color: var(--bg-principal);
+  color: var(--texto-claro);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 3. HEADER / NAVBAR */
+.home-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-b: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  background-color: rgba(7, 15, 21, 0.8);
+}
+
+.home-header-wrapper {
+  max-w: 80rem; /* 1280px */
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 5rem; /* 80px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-box {
+  width: 2rem;
+  height: 2rem;
+  color: var(--cor-marca);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid rgba(34, 211, 238, 0.3);
+  border-radius: 0.25rem;
+}
+
+.logo-text {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.nav-links {
+  display: none; /* Escondido no mobile */
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-link-active {
+  color: var(--cor-marca);
+  text-decoration: none;
+  transition: var(--transicao-suave);
+}
+
+.nav-link-active:hover {
+  color: var(--cor-marca-hover);
+}
+
+.nav-link-standard {
+  color: var(--texto-mutado);
+  text-decoration: none;
+  transition: var(--transicao-suave);
+}
+
+.nav-link-standard:hover {
+  color: var(--texto-claro);
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* O círculo de luz azul ao fundo */
+.hero-glow-effect {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background-color: var(--cor-glow);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.hero-geometric-icon {
+  margin-bottom: 2rem;
+  color: rgba(34, 211, 238, 0.15);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem); /* Fonte fluida e responsiva */
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 56rem;
+}
+
+.hero-title-gradient {
+  background: linear-gradient(to right, #ffffff, #cbd5e1, var(--cor-marca));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  margin-top: 1.5rem;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  color: var(--texto-mutado);
+  max-width: 40rem;
+  font-weight: 300;
+}
+
+/* Botão de Ação Principal */
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  font-weight: 700;
+  color: var(--texto-escuro);
+  background-color: var(--cor-marca);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  margin-top: 2.5rem;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.25);
+  transition: var(--transicao-suave);
+}
+
+.hero-cta-button:hover {
+  background-color: var(--cor-marca-hover);
+  box-shadow: 0 0 40px rgba(34, 211, 238, 0.45);
+  transform: translateY(-2px); /* Leve efeito de flutuar */
+}
+
+/* ==========================================================================
+   5. FEATURED PROJECTS SECTION
+   ========================================================================== */
+.portfolio-section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portfolio-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .portfolio-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.portfolio-subtitle {
+  color: var(--cor-marca);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.portfolio-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.portfolio-view-all {
+  color: var(--texto-mutated);
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transicao-suave);
+}
+
+.portfolio-view-all:hover {
+  color: var(--cor-marca);
+}
+
+/* Grid responsivo de Cards */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Cards dos Projetos */
+.project-card {
+  background-color: var(--bg-cards);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  transition: var(--transicao-suave);
+}
+
+.project-card:hover {
+  border-color: rgba(34, 211, 238, 0.3);
+  transform: translateY(-4px);
+}
+
+.project-image-wrapper {
+  height: 12rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: var(--transicao-suave);
+}
+
+.project-card:hover .project-image {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+/* Fallback geométrico elegante se não houver foto */
+.project-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #091117;
+}
+
+.project-fallback-tag {
+  position: absolute;
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #475569;
+}
+
+/* Corpo do Card */
+.project-card-body {
+  padding: 1.5rem;
+}
+
+.project-tag {
+  font-size: 0.625rem;
+  font-family: monospace;
+  text-transform: uppercase;
+  color: var(--cor-marca);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.project-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--texto-claro);
+  transition: var(--transicao-suave);
+}
+
+.project-card:hover .project-title {
+  color: var(--cor-marca);
+}
+
+.project-description {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--texto-mutado);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-footer);
+  padding: 3rem 0;
+  font-size: 0.875rem;
+  color: var(--texto-mutado);
+}
+
+.footer-wrapper {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-wrapper {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.125rem;
+  font-size: 0.625rem;
+}
+
+.footer-contacts {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-contact-link {
+  cursor: pointer;
+  transition: var(--transicao-suave);
+}
+
+.footer-contact-link:hover {
+  color: var(--texto-claro);
+}
+
+.logo-img-header {
+  height: 2.2rem;       /* Define uma altura elegante para a logo na barra de navegação */
+  width: auto;          /* Mantém a proporção largura/altura perfeita */
+  object-fit: contain;
+  display: block;
+
+  mix-blend-mode: screen; 
+  filter: brightness(1.2);
+}
