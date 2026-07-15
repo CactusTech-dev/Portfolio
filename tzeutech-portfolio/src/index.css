@@ -1,22 +1,24 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  /* Paleta TZEU - Tema Claro (Fundo Branco/Cinza Claro, Detalhes em Preto/Grafite) */
+  --bg: #ffffff;                  /* Fundo totalmente branco */
+  --text: #4b5563;                /* Texto principal (Cinza escuro/grafite) */
+  --text-h: #000000;              /* Títulos (Preto puro) */
+  --border: #e5e7eb;              /* Bordas (Cinza bem claro, sutil) */
+  --code-bg: #f3f4f6;             /* Fundo de códigos/tags (Cinza claro) */
+  --accent: #111827;              /* Cor de destaque/Botões (Preto/Grafite escuro) */
+  --accent-bg: rgba(17, 24, 39, 0.05); /* Destaques de fundo suaves */
+  --accent-border: rgba(17, 24, 39, 0.4);
+  --social-bg: rgba(243, 244, 246, 0.8);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(0, 0, 0, 0.05) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* Fontes elegantes e modernas */
+  --sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 
   font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  letter-spacing: -0.1px;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -32,17 +34,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    /* Paleta TZEU - Tema Escuro (Fundo Preto/Grafite, Detalhes em Branco/Cinza) */
+    --bg: #0d0e12;                /* Fundo preto bem profundo (foco em contraste) */
+    --text: #9ca3af;              /* Texto principal (Cinza claro para leitura confortável) */
+    --text-h: #ffffff;            /* Títulos (Branco puro) */
+    --border: #1f2937;            /* Bordas escuras sutis */
+    --code-bg: #111827;           /* Fundo de tags (Cinza escuro) */
+    --accent: #f9fafb;            /* Cor de destaque/Botões (Branco/Cinza quase branco) */
+    --accent-bg: rgba(249, 250, 251, 0.08);
+    --accent-border: rgba(249, 250, 251, 0.4);
+    --social-bg: rgba(31, 41, 55, 0.6);
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.5) 0 10px 20px -5px, rgba(0, 0, 0, 0.3) 0 4px 8px -3px;
   }
 
   #social .button-icon {
@@ -64,12 +67,13 @@
 
 body {
   margin: 0;
+  background: var(--bg);
 }
 
 h1,
 h2 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600; /* Um pouco mais encorpado para dar presença */
   color: var(--text-h);
 }
 
@@ -82,6 +86,7 @@ h1 {
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
@@ -91,8 +96,10 @@ h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
+  color: var(--text);
 }
 
 code,
@@ -108,4 +115,268 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+  border: 1px solid var(--border); /* Pequena borda para dar destaque no minimalismo */
+}
+
+/* Layout Geral */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding: 0 24px;
+}
+
+/* Header & Navbar */
+.home-header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.home-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img-header {
+  height: 32px;
+  width: auto;
+}
+
+.logo-text {
+  font-weight: 700;
+  color: var(--text-h);
+  letter-spacing: 1px;
+}
+
+.logo-subtext {
+  color: var(--text);
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.nav-link-active {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+.nav-link-standard {
+  color: var(--text);
+}
+
+.nav-link-standard:hover {
+  color: var(--text-h);
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-geometric-icon {
+  color: var(--text-h);
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-title-gradient {
+  color: var(--text-h);
+  font-weight: 800;
+}
+
+.hero-description {
+  max-width: 600px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+}
+
+.hero-cta-container {
+  margin-top: 16px;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--text-h);
+  color: var(--bg);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid var(--text-h);
+  transition: all 0.2s ease;
+}
+
+.hero-cta-button:hover {
+  background: transparent;
+  color: var(--text-h);
+}
+
+/* Seção de Portfolio */
+.portfolio-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.portfolio-subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.portfolio-title {
+  margin: 8px 0 0 0;
+}
+
+.portfolio-view-all {
+  color: var(--text-h);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Grid de Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.project-image-wrapper {
+  position: relative;
+  height: 200px;
+  background: var(--code-bg);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+  opacity: 0.3;
+}
+
+.project-fallback-tag {
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.project-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.footer-logo {
+  background: var(--text-h);
+  color: var(--bg);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.footer-contacts {
+  font-size: 14px;
 }

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "prolimp",
+    "title": "ProLimp",
+    "description": "Desenvolvimento do catálogo digital e institucional focado em otimizar a presença online e a exibição de produtos de limpeza técnica e profissional.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "image": "/src/assets/projects/prolimp.png",
+    "links": {
+      "live": "https://prolimp.exemplo.com",
+      "github": "https://github.com/tzeu/prolimp"
+    }
+  },
+  {
+    "id": "unitasks",
+    "title": "Unitasks",
+    "description": "Sistema completo para organização e gerenciamento de rotinas acadêmicas, tarefas e cronogramas de estudo para estudantes de TI e tecnologia.",
+    "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    "image": "/src/assets/projects/unitasks.png",
+    "links": {
+      "live": "https://unitasks.exemplo.com",
+      "github": "https://github.com/tzeu/unitasks"
+    }
+  },
+  {
+    "id": "geo-search",
+    "title": "Buscador de Empresas Regional",
+    "description": "Sistema inteligente de busca geográfica integrado à API do Google Maps, permitindo localizar prestadores de serviços e empresas locais filtrando por CEP ou cidade.",
+    "tags": ["React", "TypeScript", "Google Maps API", "Node.js"],
+    "image": "/src/assets/projects/geosearch.png",
+    "links": {
+      "live": "https://busca.tzeu.tech",
+      "github": "https://github.com/tzeu/geo-search"
+    }
+  },
+  {
+    "id": "robotica-sustentavel",
+    "title": "Logística Reversa - Instituto Robótica Sustentável",
+    "description": "Plataforma de gestão logística desenvolvida sob medida para o controle de coletas, triagem e destinação de resíduos eletrônicos e materiais recicláveis para o instituto.",
+    "tags": ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
+    "image": "/src/assets/projects/robotica-log.png",
+    "links": {
+      "live": "https://logistica.roboticasustentavel.org",
+      "github": "https://github.com/tzeu/robotica-logistics"
+    }
+  },
+  {
+    "id": "biolink-tzeu",
+    "title": "TZEU Bio Links",
+    "description": "Nosso modelo de Linktree personalizado para empresas unificarem seus canais de atendimento e redes sociais. Layout premium otimizado e faturamento de taxa única (sem mensalidades).",
+    "tags": ["HTML", "CSS", "JavaScript", "UI/UX", "Taxa Única"],
+    "image": "/src/assets/projects/biolink.png",
+    "links": {
+      "live": "https://link.tzeu.tech/modelo",
+      "github": "https://github.com/tzeu/biolinks-template"
+    }
+  }
+]
