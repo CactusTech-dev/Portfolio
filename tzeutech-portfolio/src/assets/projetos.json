@@ -6,8 +6,7 @@
     "tags": ["HTML", "CSS", "JavaScript"],
     "image": "/src/assets/projects/prolimp.png",
     "links": {
-      "live": "https://prolimp.exemplo.com",
-      "github": "https://github.com/tzeu/prolimp"
+      "github": "https://github.com/CactusTech-dev/Site-Cat-logo-ProLimp"
     }
   },
   {
@@ -17,8 +16,7 @@
     "tags": ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     "image": "/src/assets/projects/unitasks.png",
     "links": {
-      "live": "https://unitasks.exemplo.com",
-      "github": "https://github.com/tzeu/unitasks"
+      "github": "https://github.com/misaelcsc/unitasks"
     }
   },
   {
@@ -50,8 +48,7 @@
     "tags": ["HTML", "CSS", "JavaScript", "UI/UX", "Taxa Única"],
     "image": "/src/assets/projects/biolink.png",
     "links": {
-      "live": "https://link.tzeu.tech/modelo",
-      "github": "https://github.com/tzeu/biolinks-template"
+      "github": "https://github.com/CactusTech-dev/pagina-links"
     }
   }
 ]
