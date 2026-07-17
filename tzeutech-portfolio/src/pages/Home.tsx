@@ -5,6 +5,12 @@ import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer';
 
+// Importações dos integrantes
+import victorImg from '../assets/members/victor.jpg';
+import yuriImg from '../assets/members/yuri.jpg';
+import misaelImg from '../assets/members/misael.jpg';
+import lucasImg from '../assets/members/lucas.jpg';
+
 interface Project {
   id: string;
   title: string;
@@ -147,25 +153,33 @@ export default function Home() {
         </div>
         <div className="members-grid">
           <div className="member-card">
-            <div className="member-avatar">VV</div>
+            <div className="member-avatar">
+              <img src={victorImg} alt="Victor Valentim" className="member-img" />
+            </div>
             <h3 className="member-name">Victor Valentim</h3>
             <p className="member-role">Desenvolvedor Full-Stack & UI/UX</p>
           </div>
           
           <div className="member-card">
-            <div className="member-avatar">Y</div>
+            <div className="member-avatar">
+              <img src={yuriImg} alt="Yuri (@gelagua)" className="member-img" />
+            </div>
             <h3 className="member-name">Yuri (@gelagua)</h3>
             <p className="member-role">Desenvolvedor Front-End & Integrações</p>
           </div>
 
           <div className="member-card">
-            <div className="member-avatar">M</div>
+            <div className="member-avatar">
+              <img src={misaelImg} alt="Misael" className="member-img" />
+            </div>
             <h3 className="member-name">Misael</h3>
             <p className="member-role">Especialista em Banco de Dados & Back-End</p>
           </div>
 
           <div className="member-card">
-            <div className="member-avatar">L</div>
+            <div className="member-avatar">
+              <img src={lucasImg} alt="Lucas" className="member-img" />
+            </div>
             <h3 className="member-name">Lucas</h3>
             <p className="member-role">Desenvolvedor Back-End</p>
           </div>
