@@ -148,9 +148,9 @@ export default function Home() {
           
           <div className="member-card">
             <div className="member-avatar">
-              <img src={yuriImg} alt="Yuri (@gelagua)" className="member-img" />
+              <img src={yuriImg} alt="Yuri" className="member-img" />
             </div>
-            <h3 className="member-name">Yuri (@gelagua)</h3>
+            <h3 className="member-name">Yuri</h3>
             <p className="member-role">Desenvolvedor Front-End & Integrações</p>
           </div>
 
