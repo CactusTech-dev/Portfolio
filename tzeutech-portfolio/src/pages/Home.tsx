@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import projetosDoJson from '../assets/projetos.json';
+import { projects } from '../data/projects';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
@@ -11,20 +11,6 @@ import yuriImg from '../assets/members/yuri.jpg';
 import misaelImg from '../assets/members/misael.jpg';
 import lucasImg from '../assets/members/lucas.jpg';
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  links: {
-    live: string;
-    github: string;
-  };
-}
-
-const FEATURED_PROJECTS: Project[] = projetosDoJson as Project[];
-
 export default function Home() {
   return (
     <div className="home-container">
@@ -34,7 +20,7 @@ export default function Home() {
       <Hero />
 
       {/* 2. PROJECTS SECTION */}
-      <section id="projects" className="portfolio-section" style={{ scrollMarginTop: '100px' }}>
+      <section id="projects" className="portfolio-section scroll-target">
         <div className="portfolio-header">
           <div>
             <span className="portfolio-subtitle">Portfolio</span>
@@ -45,7 +31,7 @@ export default function Home() {
           </Link>
         </div>
         <div className="projects-grid">
-          {FEATURED_PROJECTS.map((project) => (
+          {projects.map((project) => (
             <ProjectCard 
               key={project.id}
               title={project.title}
@@ -59,7 +45,7 @@ export default function Home() {
       </section>
 
       {/* 3. SERVICES SECTION */}
-      <section id="services" className="portfolio-section" style={{ scrollMarginTop: '100px' }}>
+      <section id="services" className="portfolio-section scroll-target">
         <div className="portfolio-header">
           <div>
             <span className="portfolio-subtitle">O que fazemos</span>
@@ -115,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* 4. ABOUT SECTION */}
-      <section id="about" className="portfolio-section" style={{ scrollMarginTop: '100px' }}>
+      <section id="about" className="portfolio-section scroll-target">
         <div className="portfolio-header">
           <div>
             <span className="portfolio-subtitle">Quem somos</span>
@@ -144,7 +130,7 @@ export default function Home() {
       </section>
 
       {/* 5. MEMBERS SECTION */}
-      <section id="members" className="portfolio-section" style={{ scrollMarginTop: '100px' }}>
+      <section id="members" className="portfolio-section scroll-target">
         <div className="portfolio-header">
           <div>
             <span className="portfolio-subtitle">Nosso Time</span>

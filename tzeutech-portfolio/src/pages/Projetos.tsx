@@ -1,22 +1,8 @@
 import { useState, useMemo } from 'react';
-import projetosDoJson from '../assets/projetos.json';
+import { projects } from '../data/projects';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectCard';
 import Footer from '../components/Footer';
-
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  links: {
-    live: string;
-    github: string;
-  };
-}
-
-const ALL_PROJECTS: Project[] = projetosDoJson as Project[];
 
 export default function Projetos() {
   const [selectedTag, setSelectedTag] = useState<string>('Todos');
@@ -25,7 +11,7 @@ export default function Projetos() {
   const availableTags = useMemo(() => {
     const tags = new Set<string>();
     tags.add('Todos');
-    ALL_PROJECTS.forEach(project => {
+    projects.forEach(project => {
       project.tags.forEach(tag => tags.add(tag));
     });
     return Array.from(tags);
@@ -34,43 +20,33 @@ export default function Projetos() {
   // Filtra os projetos com base na tag selecionada
   const filteredProjects = useMemo(() => {
     if (selectedTag === 'Todos') {
-      return ALL_PROJECTS;
+      return projects;
     }
-    return ALL_PROJECTS.filter(project => project.tags.includes(selectedTag));
+    return projects.filter(project => project.tags.includes(selectedTag));
   }, [selectedTag]);
 
   return (
     <div className="home-container">
       <Header />
 
-      <section className="portfolio-section" style={{ scrollMarginTop: '100px', padding: '60px 0', minHeight: '70vh' }}>
-        <div className="portfolio-header" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
+      <section className="portfolio-section projects-section">
+        <div className="portfolio-header projects-header">
           <div>
             <span className="portfolio-subtitle">Nosso Portfolio</span>
             <h2 className="portfolio-title">TODOS OS PROJETOS</h2>
           </div>
-          <p style={{ margin: 0, color: 'var(--text)', fontSize: '15px', maxWidth: '600px' }}>
+          <p className="projects-introduction">
             Explore a galeria completa de soluções e produtos digitais que desenvolvemos. Use os filtros abaixo para buscar por tecnologias específicas.
           </p>
         </div>
 
         {/* Filter Tags */}
-        <div className="filter-container" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', margin: '32px 0 40px 0' }}>
+        <div className="filter-container">
           {availableTags.map(tag => (
             <button
               key={tag}
               onClick={() => setSelectedTag(tag)}
-              style={{
-                padding: '8px 16px',
-                borderRadius: '8px',
-                border: '1px solid var(--border)',
-                backgroundColor: selectedTag === tag ? 'var(--text-h)' : 'var(--code-bg)',
-                color: selectedTag === tag ? 'var(--bg)' : 'var(--text)',
-                fontSize: '13px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
+              className={`filter-button ${selectedTag === tag ? 'is-active' : ''}`}
             >
               {tag}
             </button>
@@ -92,7 +68,7 @@ export default function Projetos() {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '80px 0', color: 'var(--text)' }}>
+          <div className="no-projects-message">
             Nenhum projeto encontrado com a tecnologia selecionada.
           </div>
         )}

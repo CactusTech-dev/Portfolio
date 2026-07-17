@@ -41,9 +41,9 @@ export default function Header() {
   return (
     <header className="home-header">
       <div className="home-header-wrapper">
-        <Link to="/" className="logo-container" style={{ textDecoration: 'none' }}>
+        <Link to="/" className="logo-container">
           <img src={logoImg} alt="Logo TZEU" className="logo-img-header" />
-          <div className="logo-text-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+          <div className="logo-text-group">
             <span className="logo-text">TZEU</span>
             <span className="logo-subtext">Software House</span>
           </div>

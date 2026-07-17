@@ -1,13 +1,6 @@
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  links?: {
-    live?: string;
-    github?: string;
-  };
-}
+import type { Project } from '../types/project';
+
+type ProjectCardProps = Pick<Project, 'title' | 'description' | 'image' | 'tags' | 'links'>;
 
 export default function ProjectCard({ title, description, image, tags, links }: ProjectCardProps) {
   return (

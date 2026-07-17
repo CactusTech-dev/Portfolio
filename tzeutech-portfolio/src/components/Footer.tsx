@@ -4,13 +4,13 @@ export default function Footer() {
       <div className="footer-wrapper">
         <div className="footer-brand">
           <div className="footer-logo">T</div>
-          <div className="footer-brand-text" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span style={{ fontWeight: 600, color: 'var(--text-h)' }}>TZEU Software House</span>
-            <span style={{ fontSize: '12px', color: 'var(--text)' }}>&copy; {new Date().getFullYear()} Todos os direitos reservados.</span>
+          <div className="footer-brand-text">
+            <span className="footer-company-name">TZEU Software House</span>
+            <span className="footer-copyright">&copy; {new Date().getFullYear()} Todos os direitos reservados.</span>
           </div>
         </div>
         
-        <div className="footer-links-group" style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+        <div className="footer-links-group">
           {/* GitHub Icon Link */}
           <a 
             href="https://github.com/CactusTech-dev/Portfolio" 
@@ -34,7 +34,7 @@ export default function Footer() {
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            <span className="footer-email-text" style={{ fontSize: '14px', marginLeft: '6px' }}>tzeutechdesenvolvimento@gmail.com</span>
+            <span className="footer-email-text">tzeutechdesenvolvimento@gmail.com</span>
           </a>
         </div>
       </div>
